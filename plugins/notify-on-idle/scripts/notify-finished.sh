@@ -41,9 +41,10 @@ tell application "iTerm2"
 end tell
 OSA
 )"
-  # Strip Claude's leading braille "spinner" glyph (U+2800..U+28FF) and
-  # surrounding whitespace; also trim trailing whitespace.
-  tabname="$(printf '%s' "$raw" | perl -CSDA -pe 's/^[\x{2800}-\x{28FF}\s]+//; s/\s+$//' 2>/dev/null)"
+  # Strip Claude's leading "spinner" glyph — braille (U+2800..U+28FF) or a
+  # dingbat/symbol sparkle (U+2600..U+27BF, e.g. ✳) — plus surrounding
+  # whitespace; also trim trailing whitespace.
+  tabname="$(printf '%s' "$raw" | perl -CSDA -pe 's/^[\x{2600}-\x{27BF}\x{2800}-\x{28FF}\s]+//; s/\s+$//' 2>/dev/null)"
 fi
 
 # --- choose the most readable label ---
