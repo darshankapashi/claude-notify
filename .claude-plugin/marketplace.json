@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "claude-notify",
+  "description": "Desktop notification plugins for Claude Code.",
+  "owner": {
+    "name": "Darshan Kapashi"
+  },
+  "plugins": [
+    {
+      "name": "notify-on-idle",
+      "source": "./plugins/notify-on-idle",
+      "description": "macOS desktop notification when Claude finishes and is waiting for your input, labeled with the iTerm tab name (or the project directory).",
+      "category": "notifications"
+    }
+  ]
+}

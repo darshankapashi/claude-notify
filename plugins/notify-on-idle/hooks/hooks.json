@@ -1,0 +1,16 @@
+{
+  "description": "Fires a macOS notification when Claude goes idle waiting for input.",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/notify-finished.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
