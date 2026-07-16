@@ -52,6 +52,14 @@ CLAUDE_LABEL="Backend" claude
   (em dashes, accents, emoji) renders correctly — plain AppleScript
   `system attribute` decodes env vars as Mac Roman and garbles them.
 
+### Permissions
+
+The first time the tab-name lookup runs, macOS may show a one-time
+**Automation** prompt asking to let your terminal control iTerm2
+(*System Settings → Privacy & Security → Automation*). Allow it to get tab
+names. If you deny it, notifications still work — they just fall back to the
+project directory name.
+
 ### Requirements
 
 macOS. Uses only system tools (`osascript`, `perl`, `zsh`); `jq` is used if
